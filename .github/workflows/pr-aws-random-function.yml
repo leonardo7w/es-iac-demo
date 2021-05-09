@@ -1,7 +1,6 @@
-name: aws-random-function
+name: pr-aws-random-function
 on:
-  push:
-    branches: [ main ]
+  pull_request:
     paths:
       - 'resources/aws-random-function'
     
@@ -31,5 +30,7 @@ jobs:
           command: preview
           stack-name: dev
           work-dir: resources/aws-random-function
+          comment-on-pr: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
