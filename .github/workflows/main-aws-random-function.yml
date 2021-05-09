@@ -8,9 +8,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  up:
+    name: Pulumi Up
     runs-on: ubuntu-latest
-    
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -28,7 +28,7 @@ jobs:
         working-directory: resources/aws-random-function
       - uses: pulumi/actions@v3
         with:
-          command: preview
+          command: up
           stack-name: dev
           work-dir: resources/aws-random-function
         env:
