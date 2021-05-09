@@ -2,7 +2,7 @@ name: pr-aws-random-function
 on:
   pull_request:
     paths:
-      - 'resources/aws-random-function'
+      - 'resources/aws-random-function/**'
     
   workflow_dispatch:
 

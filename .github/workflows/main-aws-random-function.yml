@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'resources/aws-random-function'
+      - 'resources/aws-random-function/**'
     
   workflow_dispatch:
 
