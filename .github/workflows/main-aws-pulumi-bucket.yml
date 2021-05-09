@@ -1,9 +1,9 @@
-name: main-aws-random-function
+name: main-aws-pulumi-bucket
 on:
   push:
     branches: [ main ]
     paths:
-      - 'resources/aws-random-function/**'
+      - 'resources/aws-pulumi-bucket/**'
     
   workflow_dispatch:
 
@@ -25,11 +25,11 @@ jobs:
       - name: Install Pulumi CLI
         uses: pulumi/action-install-pulumi-cli@v1
       - run: npm install
-        working-directory: resources/aws-random-function
+        working-directory: resources/aws-pulumi-bucket
       - uses: pulumi/actions@v3
         with:
           command: up
           stack-name: dev
-          work-dir: resources/aws-random-function
+          work-dir: resources/aws-pulumi-bucket
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}

@@ -1,8 +1,8 @@
-name: pr-aws-random-function
+name: pr-aws-pulumi-bucket
 on:
   pull_request:
     paths:
-      - 'resources/aws-random-function/**'
+      - 'resources/aws-pulumi-bucket/**'
     
   workflow_dispatch:
 
@@ -24,12 +24,12 @@ jobs:
       - name: Install Pulumi CLI
         uses: pulumi/action-install-pulumi-cli@v1
       - run: npm install
-        working-directory: resources/aws-random-function
+        working-directory: resources/aws-pulumi-bucket
       - uses: pulumi/actions@v3
         with:
           command: preview
           stack-name: dev
-          work-dir: resources/aws-random-function
+          work-dir: resources/aws-pulumi-bucket
           comment-on-pr: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
         env:

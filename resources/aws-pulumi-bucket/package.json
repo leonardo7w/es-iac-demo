@@ -1,5 +1,5 @@
 {
-    "name": "aws-random-function",
+    "name": "aws-pulumi-bucket",
     "devDependencies": {
         "@types/node": "^10.0.0"
     },
