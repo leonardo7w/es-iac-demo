@@ -9,7 +9,7 @@ on:
 
 jobs:
   up:
-    name: Deploy - ${{ matrix.zone }}
+    name: Delete - ${{ matrix.zone }}
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
