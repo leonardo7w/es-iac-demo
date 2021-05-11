@@ -1,4 +1,4 @@
-name: main-aws-pulumi-bucket
+name: delete-aws-pulumi-bucket
 on:
   push:
     branches: [ main ]
