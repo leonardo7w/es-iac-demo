@@ -9,7 +9,7 @@ on:
 
 jobs:
   up:
-    name: Deploy Zone ${{ matrix.node }}
+    name: Deploy Zone ${{ matrix.zone }}
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 1
@@ -33,7 +33,7 @@ jobs:
       - uses: pulumi/actions@v3
         with:
           command: up
-          stack-name: ${{ matrix.node }}
+          stack-name: ${{ matrix.zone }}
           work-dir: resources/aws-pulumi-bucket
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
